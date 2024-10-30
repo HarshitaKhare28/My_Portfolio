@@ -1,0 +1,13 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  background-color: #101925;
+}
+html {
+  scroll-behavior: smooth;
+}
+
