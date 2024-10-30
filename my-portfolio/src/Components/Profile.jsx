@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import profilePhoto from '../assets/profile.png'; 
 
 export const Profile = () => {
-  // eslint-disable-next-line no-unused-vars
   const [introText, setIntroText] = useState("Hi, I'm Harshita Khare"); 
   const [tags, setTags] = useState("Full Stack Developer"); 
 
@@ -20,43 +19,43 @@ export const Profile = () => {
         const currentIndex = tagList.indexOf(prev);
         return tagList[(currentIndex + 1) % tagList.length];
       });
-    }, 3000); // Change tag every 3 seconds
+    }, 3000);
 
     return () => clearInterval(tagInterval);
   }, []);
 
   return (
-    <section id="profile" className="max-w-screen-l flex items-center py-10 md:py-16 bg-gray-900 text-white"> 
+    <section className="flex flex-col md:flex-row items-center py-10 md:py-16 bg-gray-900 text-white max-w-screen-lg mx-auto px-4 md:px-8">
       <div
         style={{
-          width: '468px',
-          height: '328px',
+          width: '100%', // Equal width and height
+          height: '340px',
           overflow: 'hidden',
           borderRadius: '50%',
           border: '4px solid white',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         }}
-        className="mb-4 md:mb-0 md:ml-20 px-2" 
+        className="mb-6 md:mb-0 md:mr-8"
       >
         <img
           src={profilePhoto}
           alt="Harshita Khare"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="max-w-mb text-left px-4 py-2 mr-10"> {/* Adjusted margin to move text closer to the photo */}
-        <h1 className="text-3xl font-bold mb-2">{introText}</h1>
-        <h2 className="text-xl font-light mb-4">{tags}</h2> {/* Removed parentheses around tags */}
-        <p className="mt-2 text-gray-300 mb-4"> {/* Light gray text for additional info */}
-          {"I'm"} Harshita Khare, a third-year Computer Science Engineering student at RCoEM. 
+      <div className="text-center md:text-left">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">{introText}</h1>
+        <h2 className="text-lg md:text-xl font-light mb-4">{tags}</h2>
+        <p className="text-gray-300 mb-4">
+          {"I'm"} Harshita Khare, a third-year Computer Science Engineering student at RCoEM.
           I have a passion for web development and data analysis. 
           I enjoy tackling challenging problems and continually learning new technologies.
         </p>
-        <p className="mt-2 text-gray-300 mb-6">
+        <p className="text-gray-300 mb-6">
           My journey in tech has been exciting, and {"I'm"} eager to contribute to innovative projects.
         </p>
-        <div className="mt-4 flex justify-start space-x-4">
+        <div className="flex justify-center md:justify-start space-x-4">
           <a
             href="https://drive.google.com/file/d/17jdACgUDxt4mTrrNPWjYTgnKA3x4j_-e/view?usp=sharing"
             target="_blank"

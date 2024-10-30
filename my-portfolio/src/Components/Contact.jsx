@@ -6,6 +6,8 @@ export const Contact = () => {
     email: '',
     message: '',
   });
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertType, setAlertType] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,14 +19,33 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Simple validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setAlertMessage('All fields are required.');
+      setAlertType('error');
+      return;
+    }
+
     console.log('Form submitted:', formData);
     setFormData({ name: '', email: '', message: '' });
+
+    setAlertMessage('Message sent successfully!');
+    setAlertType('success');
   };
 
   return (
     <section id="contact" className="py-10 bg-gray-900">
       <h2 className="text-2xl font-semibold text-center text-gray-100 mb-8">Contact</h2>
-      <div className="max-w-3xl mx-auto space-y-4 p-6 border-4 border-white rounded-lg"> {/* Added padding and border styles */}
+      
+      {/* Alert message */}
+      {alertMessage && (
+        <div className={`alert ${alertType === 'error' ? 'bg-red-500' : 'bg-green-500'} text-white text-center p-3 rounded mb-4`}>
+          {alertMessage}
+        </div>
+      )}
+      
+      <div className="max-w-3xl mx-auto space-y-4 p-6 border-4 border-white rounded-lg">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
             <label htmlFor="name" className="block text-gray-100 mb-2">Name</label>
@@ -62,16 +83,15 @@ export const Contact = () => {
               className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" 
             />
           </div>
+          <div className="flex justify-center"> 
+            <button
+              type="submit"
+              className="px-4 bg-blue-500 text-white rounded-lg py-2 hover:bg-blue-600 transition"
+            >
+              Send Message
+            </button>
+          </div>
         </form>
-        <div className="flex justify-center"> 
-          <button
-            type="submit"
-            className="px-4 bg-blue-500 text-white rounded-lg py-2 hover:bg-blue-600 transition"
-            onClick={handleSubmit} 
-          >
-            Send Message
-          </button>
-        </div>
       </div>
     </section>
   );

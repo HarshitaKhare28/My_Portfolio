@@ -1,16 +1,16 @@
 import { Link } from 'react-scroll';
 
 export const Header = () => (
-  <header className="flex justify-between items-center max-w-screen-l mx-auto px-10 py-6 bg-gray-900 text-white shadow-md">
-    <h1 className="text-3xl font-bold">Harshita Khare</h1>
-    <nav className='space-x-4'>
-      <ul className="flex space-x-8">
+  <header className="flex justify-between items-center w-full max-w-screen-lg mx-auto px-6 py-4 bg-gray-900 text-white shadow-md">
+    <h1 className="text-2xl md:text-3xl font-bold">Harshita Khare</h1>
+    <nav>
+      <ul className="flex space-x-4 md:space-x-8">
         <li>
           <Link
             to="profile"
             smooth={true}
             duration={500}
-            className="hover-cursor"
+            className="hover-cursor text-sm md:text-base"
           >
             Home
           </Link>
@@ -20,7 +20,7 @@ export const Header = () => (
             to="projects"
             smooth={true}
             duration={500}
-            className="hover-cursor"
+            className="hover-cursor text-sm md:text-base"
           >
             Projects
           </Link>
@@ -30,7 +30,7 @@ export const Header = () => (
             to="contact"
             smooth={true}
             duration={500}
-            className="hover-cursor"
+            className="hover-cursor text-sm md:text-base"
           >
             Contact
           </Link>
