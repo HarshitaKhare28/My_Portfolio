@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import profilePhoto from '../assets/profile.png'; 
 
 export const Profile = () => {
+  // eslint-disable-next-line no-unused-vars
   const [introText, setIntroText] = useState("Hi, I'm Harshita Khare"); 
   const [tags, setTags] = useState("Full Stack Developer"); 
 
