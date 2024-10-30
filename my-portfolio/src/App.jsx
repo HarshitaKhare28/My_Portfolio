@@ -10,13 +10,8 @@ function App() {
     <Router>
       <Header />
       <div className="container mx-auto px-4">
-        {/* Profile Section */}
         <Profile />
-
-        {/* Project Section */}
         <Projects />
-
-        {/* Contact Form Section */}
         <Contact />
       </div>
     </Router>

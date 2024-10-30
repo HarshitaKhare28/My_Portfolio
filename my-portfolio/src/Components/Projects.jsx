@@ -41,8 +41,8 @@ const projects = [
     },
 ];
   
-  export const Projects = () => (
-    <section id="projects" className="py-10 bg-gray-900 text-white max-w-full"> {/* Match the Profile section's background color */}
+export const Projects = () => (
+    <section id="projects" className="py-10 bg-gray-900 text-white max-w-full">
       <h2 className="text-2xl font-semibold text-center mb-8">Projects</h2>
       <div className="space-y-10">
         {projects.map((category) => (
@@ -50,7 +50,7 @@ const projects = [
             <h3 className="text-xl font-semibold mb-4 border-b border-gray-300 pb-2">
               {category.title}
             </h3>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"> {/* Increased gap to 8 */}
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {category.items.map((project) => (
                 <div
                   key={project.name}
@@ -60,19 +60,19 @@ const projects = [
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline text-center block font-bold" // Made the title bold
+                    className="text-blue-400 hover:underline text-center block font-bold"
                   >
                     {project.name}
                   </a>
-                  <p className="mt-2 text-gray-300">{project.description}</p> {/* Added description */}
-                  <div className="mt-4">
+                  <p className="mt-2 text-gray-300">{project.description}</p>
+                  <div className="mt-4 flex justify-center">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-blue-500 text-white rounded-lg py-2 px-4 text-center hover:bg-blue-600"
+                      className="inline-block bg-blue-500 text-white rounded-lg py-2 px-4 text-center hover:bg-blue-600 shadow-lg transition-shadow duration-300"
                     >
-                      GitHub Repository
+                      GitHub
                     </a>
                   </div>
                 </div>
@@ -83,4 +83,3 @@ const projects = [
       </div>
     </section>
   );
-  

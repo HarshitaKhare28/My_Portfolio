@@ -17,9 +17,7 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here (e.g., send data to an API)
     console.log('Form submitted:', formData);
-    // Reset form after submission
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -37,7 +35,7 @@ export const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" // Changed background color
+              className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" 
             />
           </div>
           <div>
@@ -49,7 +47,7 @@ export const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" // Changed background color
+              className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" 
             />
           </div>
           <div>
@@ -61,15 +59,15 @@ export const Contact = () => {
               onChange={handleChange}
               required
               rows="4"
-              className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" // Changed background color
+              className="w-full p-2 bg-gray-700 border border-gray-500 rounded text-white" 
             />
           </div>
         </form>
-        <div className="flex justify-center"> {/* Center the button */}
+        <div className="flex justify-center"> 
           <button
             type="submit"
             className="px-4 bg-blue-500 text-white rounded-lg py-2 hover:bg-blue-600 transition"
-            onClick={handleSubmit} // Trigger form submission on button click
+            onClick={handleSubmit} 
           >
             Send Message
           </button>
