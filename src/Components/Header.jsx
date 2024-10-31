@@ -10,7 +10,8 @@ export const Header = () => (
             to="profile"
             smooth={true}
             duration={500}
-            className="hover-cursor text-sm md:text-base"
+            className="cursor-pointer text-sm md:text-base"
+            offset={-50}
           >
             Home
           </Link>
@@ -20,7 +21,8 @@ export const Header = () => (
             to="projects"
             smooth={true}
             duration={500}
-            className="hover-cursor text-sm md:text-base"
+            className="cursor-pointer text-sm md:text-base"
+            offset={-50} 
           >
             Projects
           </Link>
@@ -30,7 +32,8 @@ export const Header = () => (
             to="contact"
             smooth={true}
             duration={500}
-            className="hover-cursor text-sm md:text-base"
+            className="cursor-pointer text-sm md:text-base"
+            offset={-50}
           >
             Contact
           </Link>

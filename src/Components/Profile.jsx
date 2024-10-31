@@ -29,7 +29,7 @@ export const Profile = () => {
     <section className="flex flex-col md:flex-row items-center py-10 md:py-16 bg-gray-900 text-white max-w-screen-lg mx-auto px-4 md:px-8">
       <div
         style={{
-          width: '100%', // Equal width and height
+          width: '100%', 
           height: '340px',
           overflow: 'hidden',
           borderRadius: '50%',
