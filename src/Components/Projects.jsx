@@ -1,9 +1,9 @@
-import Mern from '../assets/Mern.png';
-import For from '../assets/for.png';
-import sg from '../assets/sg.png';
-import sa from '../assets/sa.png';
-import bas from '../assets/bas.png';
-import hd from '../assets/hd.png';
+// import Mern from '../assets/Mern.png';
+// import For from '../assets/for.png';
+// import sg from '../assets/sg.png';
+// import sa from '../assets/sa.png';
+// import bas from '../assets/bas.png';
+// import hd from '../assets/hd.png';
 
 const projects = [
   {
@@ -13,19 +13,19 @@ const projects = [
         name: 'MERNPro', 
         link: 'https://github.com/HarshitaKhare28/MERNPro',
         description: "MERNPro is a full-stack web application that incorporates MongoDB, Express.js, React, and Node.js to create a dynamic and responsive platform for users, allowing for efficient data management and user interactions.",
-        image: Mern // Use the new image import
+        image: "/uploads/Mern.png" // Use the new image import
       },
       { 
         name: 'FoodOnRails', 
         link: 'https://github.com/HarshitaKhare28/FoodOnRails',
         description: "FoodOnRails is a mobile application tailored for railway passengers, enabling them to order food conveniently during their travels. The app utilizes Firebase for authentication and provides a seamless user experience.",
-        image: For // Use the new image import
+        image: "/uploads/for.png" // Use the new image import
       },
       { 
         name: 'Smart Guard', 
         link: 'https://github.com/HarshitaKhare28/Smart-Guard',
         description: "Smart Guard is a security personnel tracking and incident response system designed to enhance safety measures by providing real-time monitoring and reporting capabilities through a web-based interface.",
-        image: sg // Use the new image import
+        image: "/uploads/sg.png" // Use the new image import
       },
     ],
   },
@@ -36,19 +36,19 @@ const projects = [
         name: 'Stock Sentiment Analysis', 
         link: 'https://github.com/HarshitaKhare28/Stock_Sentiment_Analysis',
         description: "This project analyzes stock market sentiments using natural language processing (NLP) to predict stock price movements based on news articles and social media data.",
-        image: sa // Use the new image import
+        image: "/uploads/sa.png" // Use the new image import
       },
       { 
         name: 'Bank Client Subscription', 
         link: 'https://github.com/HarshitaKhare28/Bank_Client_Subscription',
         description: "This project employs machine learning algorithms to predict whether a bank client will subscribe to a term deposit based on various demographic and financial features.",
-        image: bas // Use the new image import
+        image: "/uploads/bas.png" // Use the new image import
       },
       { 
         name: 'Handwritten Digits Classification', 
         link: 'https://github.com/HarshitaKhare28/Handwritten_Digits_Classification',
         description: "Using neural networks, this project classifies handwritten digits from the MNIST dataset, showcasing the application of deep learning in image recognition tasks.",
-        image: hd // Use the new image import
+        image: "/uploads/hd.png" // Use the new image import
       },
     ],
   },

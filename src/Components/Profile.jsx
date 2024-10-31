@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import profilePhoto from '../assets/profile.png'; 
+// import profilePhoto from '../assets/profile.png'; 
 
 export const Profile = () => {
   // eslint-disable-next-line no-unused-vars
@@ -39,7 +39,7 @@ export const Profile = () => {
         className="mb-6 md:mb-0 md:mr-8"
       >
         <img
-          src={profilePhoto}
+          src="/uploads/profile.png"
           alt="Harshita Khare"
           className="w-full h-full object-cover"
         />
