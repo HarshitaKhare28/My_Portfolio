@@ -7,25 +7,20 @@
   ],
   "headers": [
     {
-      "source": "/assets/:path*",
+      "source": "/assets/:path*.css",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "text/css",
-          "when": {
-            "has": [
-              { "type": "pathname", "value": "\\.css$" }
-            ]
-          }
-        },
+          "value": "text/css"
+        }
+      ]
+    },
+    {
+      "source": "/assets/:path*.js",
+      "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript",
-          "when": {
-            "has": [
-              { "type": "pathname", "value": "\\.js$" }
-            ]
-          }
+          "value": "application/javascript"
         }
       ]
     }
