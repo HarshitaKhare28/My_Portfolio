@@ -1,28 +1,26 @@
 {
-  "rewrites": [
-    {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
+  "version": 2,
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
     }
-  ],
-  "headers": [
+  },
+  "routes": [
     {
-      "source": "/assets/:path*.css",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/css"
-        }
-      ]
+      "src": "/assets/(.*)\\.css",
+      "headers": {
+        "Content-Type": "text/css"
+      }
     },
     {
-      "source": "/assets/:path*.js",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        }
-      ]
+      "src": "/assets/(.*)\\.js",
+      "headers": {
+        "Content-Type": "application/javascript"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
