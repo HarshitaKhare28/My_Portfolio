@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 
 export const Contact = () => {
@@ -28,7 +29,7 @@ export const Contact = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
