@@ -1,19 +1,26 @@
 const { Resend } = require('resend');
 
-// Initialize Resend with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(req, res) {
-  // Ensure the request is a POST
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  // Extract data from the request body
+  console.log("API hit! Request body:", req.body);  // Debugging
+
   const { name, email, message } = req.body;
 
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: 'Missing required fields' });
+  }
+
   try {
-    // Send email using Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    
+    if (!process.env.RESEND_API_KEY) {
+      console.error("❌ RESEND_API_KEY is missing in environment variables!");
+      return res.status(500).json({ message: 'Server misconfiguration: API key missing' });
+    }
+
     const data = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: ['harshitashirsh@gmail.com'],
@@ -26,11 +33,10 @@ export default async function handler(req, res) {
       `,
     });
 
-    // Return success response
+    console.log("✅ Email sent successfully:", data);
     return res.status(200).json({ message: 'Email sent successfully!', data });
   } catch (error) {
-    // Log error and return failure response
-    console.error('Error sending email:', error);
+    console.error("❌ Error sending email:", error);
     return res.status(500).json({ message: 'Failed to send email.', error: error.message });
   }
 }
