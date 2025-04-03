@@ -29,7 +29,7 @@ export const Contact = () => {
     }
 
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://www.harshitakhare.co/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
