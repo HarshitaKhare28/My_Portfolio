@@ -58,7 +58,7 @@ export const Profile = () => {
         </p>
         <div className="flex justify-center md:justify-start space-x-4">
           <a
-            href="https://drive.google.com/file/d/1O9jif9-edkd8xE1ppPO11dcUwuX0LRtL/view?usp=sharing"
+            href="https://drive.google.com/file/d/17jdACgUDxt4mTrrNPWjYTgnKA3x4j_-e/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition"
