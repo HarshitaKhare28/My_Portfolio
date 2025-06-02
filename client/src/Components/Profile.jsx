@@ -49,9 +49,12 @@ export const Profile = () => {
         <h1 className="text-2xl md:text-3xl font-bold mb-2">{introText}</h1>
         <h2 className="text-lg md:text-xl font-light mb-4">{tags}</h2>
         <p className="text-gray-300 mb-4">
-          {"I'm"} Harshita Khare, a third-year Computer Science Engineering student at RCoEM.
+          {"I'm"} Harshita Khare, a Computer Science Engineering student at RCoEM.
           I have a passion for web development and data analysis. 
-          I enjoy tackling challenging problems and continually learning new technologies.
+
+
+          
+          I enjoy tackling challenging problems and continuously learning new technologies.
         </p>
         <p className="text-gray-300 mb-6">
           My journey in tech has been exciting, and {"I'm"} eager to contribute to innovative projects.

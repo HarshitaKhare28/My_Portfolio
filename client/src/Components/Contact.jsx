@@ -54,7 +54,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-10 bg-gray-900">
-      <h2 className="text-2xl font-semibold text-center text-gray-100 mb-8">Contact</h2>
+      <h2 className="text-2xl font-semibold text-center text-gray-100 mb-8">{"Let's"} Connect !</h2>
 
       {/* Alert message */}
       {alertMessage && (
