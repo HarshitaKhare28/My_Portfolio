@@ -2,6 +2,7 @@ const projects = [
   { 
     name: 'Stock Sentiment Analysis', 
     link: 'https://github.com/HarshitaKhare28/Stock_Sentiment_Analysis',
+    blogLink: 'https://app.readytensor.ai/publications/market-moods-leveraging-nlp-for-stock-trend-prediction-HahDnCPOGsgD',
     description: "This project analyzes stock market sentiments using natural language processing (NLP) to predict stock price movements based on news articles and social media data.",
     image: "/uploads/sa.png"
   },
@@ -67,7 +68,7 @@ export const Projects = () => (
           </a>
           <p className="mt-2 text-gray-300">{project.description}</p>
           
-          <div className="mt-4 flex justify-center gap-4">
+          <div className="mt-4 flex justify-center gap-4 flex-wrap">
             <a
               href={project.link}
               target="_blank"
@@ -87,10 +88,20 @@ export const Projects = () => (
                 Live Demo
               </a>
             )}
+
+            {project.blogLink && (
+              <a
+                href={project.blogLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-purple-500 text-white rounded-lg py-2 px-4 text-center hover:bg-purple-600 shadow-lg transition-shadow duration-300"
+              >
+                Blog
+              </a>
+            )}
           </div>
         </div>
       ))}
     </div>
   </section>
 );
-
