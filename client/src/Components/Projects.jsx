@@ -1,4 +1,10 @@
 const projects = [
+  {
+    name: 'TalkHub',
+    demoLink: 'https://talkhub-ten.vercel.app/',
+    description: "TalkHub is a full-stack MERN application with Socket.IO for real-time communication, end-to-end encrypted messaging, and integrated Google OAuth for secure authentication.",
+    image: "/uploads/talkhub.png"
+  },
   { 
     name: 'Stock Sentiment Analysis', 
     link: 'https://github.com/HarshitaKhare28/Stock_Sentiment_Analysis',
@@ -31,12 +37,6 @@ const projects = [
     description: "This project employs machine learning algorithms to predict whether a bank client will subscribe to a term deposit based on various demographic and financial features.",
     image: "/uploads/bas.png"
   },
-  { 
-    name: 'MERNPro', 
-    link: 'https://github.com/HarshitaKhare28/MERNPro',
-    description: "MERNPro is a full-stack web application that incorporates MongoDB, Express.js, React, and Node.js to create a dynamic and responsive platform for users, allowing for efficient data management and user interactions.",
-    image: "/uploads/Mern.png"
-  },
 ];
 
 export const Projects = () => (
@@ -56,10 +56,10 @@ export const Projects = () => (
           <img
             src={project.image}
             alt={project.name}
-            className="w-full h-40 object-cover rounded-t-lg mb-4"
+            className="w-full h-40 object-cover rounded-t-lg mb-4 border border-white"
           />
           <a
-            href={project.link}
+            href={project.demoLink || project.link}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline text-center block font-bold"
@@ -69,14 +69,16 @@ export const Projects = () => (
           <p className="mt-2 text-gray-300">{project.description}</p>
           
           <div className="mt-4 flex justify-center gap-4 flex-wrap">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-500 text-white rounded-lg py-2 px-4 text-center hover:bg-blue-600 shadow-lg transition-shadow duration-300"
-            >
-              GitHub
-            </a>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-500 text-white rounded-lg py-2 px-4 text-center hover:bg-blue-600 shadow-lg transition-shadow duration-300"
+              >
+                GitHub
+              </a>
+            )}
 
             {project.demoLink && (
               <a
