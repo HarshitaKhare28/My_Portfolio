@@ -7,7 +7,7 @@ export const Aboutme = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="text-2xl font-semibold text-center text-white mb-4"
       >
         About Me
@@ -17,7 +17,7 @@ export const Aboutme = () => {
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="max-w-4xl mx-auto"
       >
         <div className="border-t border-white w-full mb-8"></div>
@@ -27,11 +27,11 @@ export const Aboutme = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="max-w-4xl mx-auto bg-gray-800 text-white px-6 text-center md:text-left text-gray-300 space-y-4 leading-relaxed border-2 border-white rounded-lg p-6 shadow-xl"
       >
         <p>
-          I'm Harshita Khare, a passionate and driven Computer Science Engineering student at RCoEM. 
+          {"I'm"} Harshita Khare, a passionate and driven Computer Science Engineering student at RCoEM. 
           My journey in tech began with curiosity and has since evolved into a deep commitment to learning and creating. 
           I specialize in full-stack web development, combining both front-end and back-end technologies to build seamless, responsive, and user-friendly applications. 
           In addition, I have a strong interest in data analysis, where I enjoy uncovering patterns and insights from complex datasets.
