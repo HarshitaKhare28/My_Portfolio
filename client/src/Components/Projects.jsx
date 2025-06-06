@@ -1,3 +1,4 @@
+// src/Projects.jsx
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -50,18 +51,16 @@ const projects = [
 export const Projects = () => (
   <motion.section
     id="projects"
-    className="py-10 bg-gray-900 text-white max-w-full"
+    className="py-10 text-white max-w-full"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7, ease: 'easeOut' }}
     viewport={{ once: false, amount: 0.3 }}
   >
     <h2 className="text-2xl font-semibold text-center mb-2">Projects</h2>
-
     <div className="max-w-7xl mx-auto">
       <div className="border-t border-white w-full mb-8"></div>
     </div>
-
     <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <motion.div
@@ -86,7 +85,6 @@ export const Projects = () => (
             {project.name}
           </a>
           <p className="mt-2 text-gray-300">{project.description}</p>
-
           <div className="mt-4 flex justify-center gap-4 flex-wrap">
             {project.link && (
               <a
@@ -98,7 +96,6 @@ export const Projects = () => (
                 GitHub
               </a>
             )}
-
             {project.demoLink && (
               <a
                 href={project.demoLink}
@@ -109,7 +106,6 @@ export const Projects = () => (
                 Live Demo
               </a>
             )}
-
             {project.blogLink && (
               <a
                 href={project.blogLink}

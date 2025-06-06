@@ -1,3 +1,4 @@
+// src/Contact.jsx
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -55,14 +56,13 @@ export const Contact = () => {
   return (
     <motion.section
       id="contact"
-      className="py-10 bg-gray-900"
+      className="py-10"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       viewport={{ once: false, amount: 0.3 }}
     >
       <h2 className="text-2xl font-semibold text-center text-gray-100 mb-8">{"Let's"} Connect !</h2>
-
       {alertMessage && (
         <div
           className={`alert ${
@@ -72,7 +72,6 @@ export const Contact = () => {
           {alertMessage}
         </div>
       )}
-
       <div className="max-w-3xl mx-auto space-y-4 p-6 border-4 border-white rounded-lg">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
