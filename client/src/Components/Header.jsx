@@ -18,6 +18,17 @@ export const Header = () => (
         </li>
         <li>
           <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            className="cursor-pointer text-sm md:text-base"
+            offset={-50}
+          >
+            About Me
+          </Link>
+        </li>
+        <li>
+          <Link
             to="projects"
             smooth={true}
             duration={500}

@@ -51,7 +51,9 @@ export const Profile = () => {
                 Resume
               </a>
               <button
-                onClick={() => window.open('https://www.linkedin.com/in/harshita-khare-a5152625a/', '_blank')}
+                onClick={() =>
+                  window.open('https://www.linkedin.com/in/harshita-khare-a5152625a/', '_blank')
+                }
                 className="bg-blue-600 px-4 py-2 rounded-md text-white hover:bg-blue-700 transition"
               >
                 LinkedIn
@@ -66,31 +68,6 @@ export const Profile = () => {
           </div>
         </div>
       </section>
-
-      {/* About Me Section */}
-      <section id="about" className="pt-10 pb-16 px-6 md:px-20 bg-gray-900 text-white">
-  <h2 className="text-3xl font-bold text-center mb-4">About Me</h2>
-
-  {/* Horizontal Line */}
-  <div className="max-w-4xl mx-auto">
-    <div className="border-t border-white w-full mb-8"></div>
-  </div>
-
-  <div className="max-w-4xl mx-auto text-center md:text-left text-gray-300 space-y-4 leading-relaxed">
-    <p>
-      I'm Harshita Khare, a passionate Computer Science Engineering student at RCoEM.
-      With a strong foundation in full-stack web development, data analysis, and a deep
-      curiosity about tech, I love building impactful projects and exploring emerging technologies.
-    </p>
-    <p>
-      I'm proficient in languages like C++, Java, Python, and JavaScript, and I've worked
-      extensively with frameworks like React, Node.js, Express, and MongoDB. Whether it's
-      developing a dynamic website, solving competitive programming problems, or learning
-      new tools like Azure and Docker — I'm always ready to dive in and grow.
-    </p>
-  </div>
-</section>
-
     </>
   );
 };
