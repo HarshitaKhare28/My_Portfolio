@@ -29,7 +29,12 @@ export const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://www.harshitakhare.co/api/send-email', {
+      // Use environment variable or fallback to local development URL
+      const apiUrl = process.env.NODE_ENV === 'production' 
+        ? 'https://www.harshitakhare.co/api/send-email'
+        : 'http://localhost:5000/api/send-email';
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
