@@ -6,9 +6,8 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
-// Create a transporter object using SMTP transport
 const transporter = nodemailer.createTransport({
-  service: process.env.EMAIL_SERVICE, // e.g., 'gmail'
+  service: process.env.EMAIL_SERVICE, 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
@@ -17,18 +16,19 @@ const transporter = nodemailer.createTransport({
 
 // Middleware
 app.use(cors({
-  origin: ['https://www.harshitakhare.co', 'http://localhost:5173'],
+  origin: ['https://www.harshitakhare.co', 'http://localhost:5173', 'https://my-portfolio-bm62.onrender.com'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
 app.use(express.json());
 
-// API endpoint to send email
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
-    // Define email options
     const mailOptions = {
       from: process.env.EMAIL_FROM || '"Portfolio Contact" <your-email@example.com>',
       to: 'harshitashirsh@gmail.com',
@@ -39,7 +39,7 @@ app.post('/api/send-email', async (req, res) => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
-      replyTo: email, // Allow direct reply to the sender
+      replyTo: email, 
     };
 
     // Send email

@@ -29,9 +29,9 @@ export const Contact = () => {
     }
 
     try {
-      // Use environment variable or fallback to local development URL
+      // Updated to use Render.com URL in production
       const apiUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://www.harshitakhare.co/api/send-email'
+        ? 'https://my-portfolio-bm62.onrender.com/api/send-email'
         : 'http://localhost:5000/api/send-email';
 
       const response = await fetch(apiUrl, {
