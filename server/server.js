@@ -17,8 +17,9 @@ const transporter = nodemailer.createTransport({
 // Middleware
 app.use(cors({
   origin: ['https://www.harshitakhare.co', 'http://localhost:5173', 'https://my-portfolio-bm62.onrender.com'],
-  methods: ['GET', 'POST'],
-  credentials: true
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
@@ -39,11 +40,28 @@ app.post('/api/send-email', async (req, res) => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
-      replyTo: email, 
+      replyTo: email,
     };
 
     // Send email
     const info = await transporter.sendMail(mailOptions);
+
+    // For Gmail: Send a copy to yourself to save in Sent folder
+    if (process.env.EMAIL_SERVICE === 'gmail') {
+      try {
+        await transporter.sendMail({
+          from: process.env.EMAIL_FROM || process.env.EMAIL_USER,
+          to: process.env.EMAIL_USER, // Send to yourself
+          subject: `[SENT] ${mailOptions.subject}`,
+          html: mailOptions.html,
+          headers: {
+            'X-Portfolio-Sent': 'true'
+          }
+        });
+      } catch (copyError) {
+        console.log('Could not save to sent folder:', copyError.message);
+      }
+    }
 
     return res.status(200).json({ 
       message: 'Email sent successfully!', 

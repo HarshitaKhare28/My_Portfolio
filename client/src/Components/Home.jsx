@@ -3,6 +3,7 @@ import { Contact } from "./Contact";
 import { Profile } from "./Profile";
 import { Projects } from "./Projects";
 import { Aboutme } from "./Aboutme";
+import { Statistics } from "./Statistics";
 import { CursorTrail } from "./CursorTrail";
 import { ParticleBackground } from "./ParticleBackground";
 
@@ -21,6 +22,9 @@ export const Home = () => {
       {/* Content */}
       <section id="profile">
         <Profile />
+      </section>
+      <section id="statistics">
+        <Statistics />
       </section>
       <section id="about">
         <Aboutme />
