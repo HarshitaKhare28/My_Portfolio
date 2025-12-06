@@ -3,9 +3,13 @@ import { Contact } from "./Contact";
 import { Profile } from "./Profile";
 import { Projects } from "./Projects";
 import { Aboutme } from "./Aboutme";
-import { Statistics } from "./Statistics";
 import { CursorTrail } from "./CursorTrail";
 import { ParticleBackground } from "./ParticleBackground";
+import { AnimatedBackground } from "./AnimatedBackground";
+import { Experience } from "./Experience";
+import { Skills } from "./Skills";
+import { Achievements } from "./Achievements";
+import { Education } from "./Education";
 
 export const Home = () => {
   return (
@@ -16,6 +20,8 @@ export const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-site-dark-teal via-site-blue-purple to-site-light-purple bg-[length:400%] animate-scroll-gradient"></div>
         {/* Particle Layer */}
         <ParticleBackground />
+        {/* Animated Network Layer */}
+        <AnimatedBackground />
       </div>
       {/* Cursor Trail */}
       <CursorTrail />
@@ -23,11 +29,21 @@ export const Home = () => {
       <section id="profile">
         <Profile />
       </section>
-      <section id="statistics">
-        <Statistics />
+      <section id="education">
+        <Education />
       </section>
       <section id="about">
         <Aboutme />
+      </section>
+      <section id="skills">
+        <Skills />
+      </section>
+      
+      <section id="experience">
+        <Experience />
+      </section>
+      <section id="achievements">
+        <Achievements />
       </section>
       <section id="projects">
         <Projects />
