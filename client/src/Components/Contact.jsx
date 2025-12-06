@@ -30,12 +30,10 @@ export const Contact = () => {
     }
 
     try {
-      // Updated to use Render.com URL in production
-      const apiUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://my-portfolio-bm62.onrender.com/api/send-email'
-        : 'http://localhost:5000/api/send-email';
+      // Use environment variable or fallback to local development
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-      const response = await fetch(apiUrl, {
+      const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

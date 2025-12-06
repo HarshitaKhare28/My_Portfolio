@@ -16,7 +16,12 @@ const transporter = nodemailer.createTransport({
 
 // Middleware
 app.use(cors({
-  origin: ['https://www.harshitakhare.co', 'http://localhost:5173', 'https://my-portfolio-bm62.onrender.com'],
+  origin: [
+    'https://www.harshitakhare.co', 
+    'http://localhost:5173', 
+    'https://my-portfolio-bm62.onrender.com',
+    'https://my-portfolio-alpha-swart-16.vercel.app'
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization']
