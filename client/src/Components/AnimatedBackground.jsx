@@ -11,6 +11,7 @@ export const AnimatedBackground = () => {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let particles = [];
+    let mouse = { x: null, y: null, radius: 150 };
 
     // Set canvas size
     const resizeCanvas = () => {
@@ -20,30 +21,68 @@ export const AnimatedBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    // Mouse move event
+    const handleMouseMove = (event) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Mouse leave event
+    const handleMouseLeave = () => {
+      mouse.x = null;
+      mouse.y = null;
+    };
+    window.addEventListener('mouseleave', handleMouseLeave);
+
     // Particle class
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.size = Math.random() * 3 + 2;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.5 + 0.5;
       }
 
       update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+        // Calculate distance from mouse
+        if (mouse.x && mouse.y) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          // Repel particles from mouse
+          if (distance < mouse.radius) {
+            const force = (mouse.radius - distance) / mouse.radius;
+            const angle = Math.atan2(dy, dx);
+            this.x -= Math.cos(angle) * force * 8;
+            this.y -= Math.sin(angle) * force * 8;
+          }
+        }
+
+        // Return to base position
+        const dxBase = this.baseX - this.x;
+        const dyBase = this.baseY - this.y;
+        this.x += dxBase * 0.05;
+        this.y += dyBase * 0.05;
+
+        // Normal movement
+        this.baseX += this.speedX;
+        this.baseY += this.speedY;
 
         // Wrap around screen
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        if (this.baseX > canvas.width) this.baseX = 0;
+        if (this.baseX < 0) this.baseX = canvas.width;
+        if (this.baseY > canvas.height) this.baseY = 0;
+        if (this.baseY < 0) this.baseY = canvas.height;
       }
 
       draw() {
-        ctx.fillStyle = `rgba(234, 179, 8, ${this.opacity})`; // yellow-400
+        ctx.fillStyle = `rgba(203, 213, 225, ${this.opacity})`; // slate-300 - brighter
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -53,7 +92,7 @@ export const AnimatedBackground = () => {
     // Initialize particles
     const initParticles = () => {
       particles = [];
-      const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 15000));
+      const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 10000));
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
@@ -78,9 +117,9 @@ export const AnimatedBackground = () => {
           const dy = particleA.y - particleB.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
-            ctx.strokeStyle = `rgba(234, 179, 8, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+          if (distance < 120) {
+            ctx.strokeStyle = `rgba(203, 213, 225, ${0.4 * (1 - distance / 120)})`;
+            ctx.lineWidth = 1.5;
             ctx.beginPath();
             ctx.moveTo(particleA.x, particleA.y);
             ctx.lineTo(particleB.x, particleB.y);
@@ -98,6 +137,8 @@ export const AnimatedBackground = () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('resize', initParticles);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 

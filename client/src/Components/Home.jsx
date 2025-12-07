@@ -15,16 +15,10 @@ export const Home = () => {
   return (
     <div className="relative min-h-screen">
       {/* Background Layers */}
-      <div className="fixed inset-0 z-[-2]">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-site-dark-teal via-site-blue-purple to-site-light-purple bg-[length:400%] animate-scroll-gradient"></div>
-        {/* Particle Layer */}
-        <ParticleBackground />
-        {/* Animated Network Layer */}
+      <div className="fixed inset-0 z-[-2] bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
+        {/* Animated Network Layer with Repel Effect */}
         <AnimatedBackground />
       </div>
-      {/* Cursor Trail */}
-      <CursorTrail />
       {/* Content */}
       <section id="profile">
         <Profile />

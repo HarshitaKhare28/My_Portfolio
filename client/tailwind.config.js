@@ -20,9 +20,9 @@ export default {
         },
       },
       colors: {
-        'site-dark-teal': '#1a2526', // Header color
-        'site-blue-purple': '#1c252f', // Middle sections
-        'site-light-purple': '#25263f', // Lower sections
+        'site-dark-teal': '#0f172a', // Clean dark background
+        'site-blue-purple': '#1e293b', // Slightly lighter
+        'site-light-purple': '#334155', // Accent areas
       },
     },
   },
