@@ -1,7 +1,7 @@
   // src/Profile.jsx
   import { useEffect, useState } from 'react';
   import { motion } from 'framer-motion';
-  import { FaGithub, FaLinkedin, FaFileAlt, FaCode, FaChartLine, FaBrain, FaRocket } from 'react-icons/fa';
+  import { FaGithub, FaLinkedin, FaFileAlt, FaCode, FaChartLine, FaBrain, FaRocket, FaDownload } from 'react-icons/fa';
 
   export const Profile = () => {
     const [introText, setIntroText] = useState("Hi, I'm Harshita Khare");
@@ -75,13 +75,12 @@
             className="flex flex-wrap justify-center gap-4"
           >
             <a
-              href="https://drive.google.com/file/d/1DcXOeOq4VCd3OZl1EEo3Mymv9aC1F3yH/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white/10 backdrop-blur-md px-6 py-3 rounded-lg text-white border border-white/20 hover:bg-white/20 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+              href="https://drive.google.com/uc?export=download&id=1DcXOeOq4VCd3OZl1EEo3Mymv9aC1F3yH"
+              download="Harshita_Khare_Resume.pdf"
+              className="group relative bg-gradient-to-r from-yellow-400 to-orange-500 px-8 py-4 rounded-lg text-gray-900 font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-105"
             >
-              <FaFileAlt className="text-lg" />
-              <span className="font-semibold">Resume</span>
+              <FaDownload className="text-xl group-hover:animate-bounce" />
+              <span className="text-lg">Download Resume</span>
             </a>
             <button
               onClick={() =>

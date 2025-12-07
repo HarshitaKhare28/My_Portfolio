@@ -1,6 +1,7 @@
 // src/Header.jsx
 import { Link } from 'react-scroll';
 import { useState } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState('profile');
@@ -11,8 +12,9 @@ export const Header = () => {
         <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent">
           Harshita Khare
         </h1>
-        <nav>
-          <ul className="flex space-x-2 md:space-x-6">
+        <div className="flex items-center gap-4">
+          <nav>
+            <ul className="flex space-x-2 md:space-x-6">
             {[
               { id: 'profile', label: 'Home' },
               { id: 'about', label: 'About' },
@@ -42,6 +44,8 @@ export const Header = () => {
             ))}
           </ul>
         </nav>
+        <ThemeToggle />
+        </div>
       </div>
     </header>
   );

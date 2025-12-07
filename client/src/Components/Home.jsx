@@ -10,6 +10,7 @@ import { Experience } from "./Experience";
 import { Skills } from "./Skills";
 import { Achievements } from "./Achievements";
 import { Education } from "./Education";
+import { SocialStats } from "./SocialStats";
 
 export const Home = () => {
   return (
